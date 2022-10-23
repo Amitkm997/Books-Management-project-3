@@ -89,7 +89,7 @@ const loginUser = async function (req, res) {
                 userId: userInDb._id.toString(),
                 exp: Math.floor(Date.now() / 1000) + (50 * 60),
                 iat: Math.floor(Date.now() / 1000)
-            }, "Group55");
+            }, "Group51");
 
         res.setHeader("x-auth-token", token);
 

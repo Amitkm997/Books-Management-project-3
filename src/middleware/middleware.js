@@ -11,7 +11,7 @@ const authentication = (req,res,next)=>{
     }
 
     // DECODE TOKEN FETCH BY FROM HEADER----
-    let decodedToken = jwt.verify(token, "Group55")
+    let decodedToken = jwt.verify(token, "Group51")
     if(!decodedToken){
        return res.staus(401).send({status:false,message:"Invalid token"})
     }
@@ -32,7 +32,7 @@ const authorization=async (req, res, next)=>{
     }
 
     // DECODE TOKEN FETCH BY FROM HEADER----
-    let decodedToken = jwt.verify(token, "Group55")
+    let decodedToken = jwt.verify(token, "Group51")
     if(!decodedToken){
       return  res.staus(401).send({status:false,message:"Invalid token"})
     }

@@ -24,12 +24,12 @@ const isPhoneValid = function (value) {
     return true
 }
 
-const isValidISBN = function (value) {
-    if (! /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/.test(value)) {
-        return false
-    }
-    return true
-}
+// const isValidISBN = function (value) {
+//     if (! /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/.test(value)) {
+//         return false
+//     }
+//     return true
+// }
 
 
 
@@ -57,4 +57,4 @@ const alphabetTestOfString = function (value) {
 
 
 
-module.exports = { isValid, isTitleValid, isPhoneValid, nameValid, isValidISBN, isValidreleasedAt, isValidEmail, alphabetTestOfString }
+module.exports = { isValid, isTitleValid, isPhoneValid, nameValid,  isValidreleasedAt, isValidEmail, alphabetTestOfString }

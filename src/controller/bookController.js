@@ -9,7 +9,7 @@ const moment = require('moment')
 const createBook = async function (req, res) {
     try {
         const data = req.body
-        let { title, excerpt, userId, category, subcategory, releasedAt, ISBN, } = data
+        let { title, excerpt, userId, category, subcategory, releasedAt, ISBN } = data
 
 //validations:-
         if (Object.keys(data).length === 0) return res.status(400).send({ status: false, msg: "body should be present" })
@@ -21,13 +21,13 @@ const createBook = async function (req, res) {
 
         let isValid = mongoose.Types.ObjectId.isValid(userId);
         if (!isValid) {
-            return res.status(400).send({ status: false, message: "Id is Not Valid" })
+            return res.status(400).send({ status: false, message: "UserId is Not Valid" })
         }
 
         if (!userId) return res.status(400).send({ status: false, msg: "userId is required" })
 
         if (!ISBN) return res.status(400).send({ status: false, msg: "ISBN code is required" })
-        if (!validator.isValidISBN(ISBN)) return res.status(400).send({ status: false, msg: "ISBN is not valid" })
+        // if (!validator.isValidISBN(ISBN)) return res.status(400).send({ status: false, msg: "ISBN is not valid" })
         const ISBNunique = await bookModel.findOne({ ISBN: ISBN })
         if (ISBNunique) return res.status(400).send({ status: false, msg: "ISBN is already exist" })
 
